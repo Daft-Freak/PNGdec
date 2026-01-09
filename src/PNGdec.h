@@ -52,7 +52,7 @@
 // Defaults to 320 32-bit pixels max width
 // but can be overidden with a macro defined at compile time
 #ifndef PNG_MAX_BUFFERED_PIXELS
-#ifdef __LINUX__
+#if defined( __LINUX__ ) || defined ( __MACH__ )
 #define PNG_MAX_BUFFERED_PIXELS ((2048*4 + 1)*2)
 #else // Arduino?
 #define PNG_MAX_BUFFERED_PIXELS ((320*4 + 1)*2)
